@@ -1,0 +1,94 @@
+{% extends 'layout.html'%}
+
+{% block title %} DASHBOARD {% endblock %}
+
+{% block content %}
+
+<!-- TOP -->
+        <div class="topbar">
+            <div>
+                <small>Bienvenido</small>
+                <h1>Juan Pérez</h1>
+            </div>
+
+            <div class="user">
+                <div class="avatar"></div>
+            </div>
+        </div>
+
+        <!-- CARDS -->
+
+        <div class="cards">
+            <div class="card balance">
+                <p>Total Prestado</p>
+                <h2>RD$ 245,000</h2>
+                <small>
+                    +12% este mes
+                </small>
+            </div>
+
+            <div class="card">
+                <h3>Clientes activos</h3>
+                <h2 style="margin-top:15px;font-size:42px;">
+                    42
+                </h2>
+            </div>
+        </div>
+
+        <!-- ACTIONS -->
+        <div class="actions">
+
+            <div class="action">
+                <div class="action-icon plus"></div>
+                <h3>Nuevo Cliente</h3>
+            </div>
+
+            <div class="action">
+                <div class="action-icon cash"></div>
+                <h3>Nuevo Préstamo</h3>
+            </div>
+
+            <div class="action">
+                <div class="action-icon check"></div>
+                <h3>Cobrar</h3>
+            </div>
+        </div>
+
+        <!-- TABLE -->
+        <div class="table">
+            <div class="loan">
+
+                <div>
+                    <h3>María González</h3>
+                    <small>
+                        Vence 15 Jun 2026
+                    </small>
+                </div>
+
+                <div>
+                    <h2>RD$ 50,000</h2>
+                    <div class="status">
+                        Al día
+                    </div>
+                </div>
+            </div>
+
+            <div class="loan">
+
+                <div>
+                    <h3>Carlos Martínez</h3>
+                    <small>
+                        Vence 22 Jul 2026
+                    </small>
+                </div>
+
+                <div>
+                    <h2>RD$ 80,000</h2>
+                    <div class="status">
+                        Al día
+                    </div>
+                </div>
+            </div>
+        </div>
+
+{% endblock %}
