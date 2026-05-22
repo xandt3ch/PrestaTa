@@ -1,2 +1,3 @@
 # PrestaTa
-una pequeña app para prestamista
+Una pequeña app para prestamista en desarrollo
+
