@@ -11,7 +11,8 @@ class Database:
             self.connection = sqlite3.connect(database)
             self.connection.row_factory = sqlite3.Row
         return self.connection
-
+    
+# instaciando la clase Database para usarla en otras partes de la aplicación
 db = Database()
 
 def create_tables():
