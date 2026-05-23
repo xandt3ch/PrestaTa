@@ -15,8 +15,8 @@ def dashboard():
 @main.route('/prestamo')
 def prestamo():
     prestamos = Prestamos.query.all()
-    return render_template('prestamo.html', prestamos=prestamos)
-    return render_template('prestamo.html')
+    clientes = Clientes.query.where(Clientes.id == Prestamos.cliente_id).all()
+    return render_template('prestamo.html', prestamos=prestamos, clientes=clientes)
 
 # ruta plus
 @main.route('/plus')
@@ -44,5 +44,14 @@ def config():
 # ruta de configuracion
 @main.route('/usuario')
 def usuario():
-    usuarios = Usuarios.query.all()
+    usuarios = Usuarios.query.filter(
+        Usuarios.id,
+        Usuarios.apodo,
+        Usuarios.nombre,
+        Usuarios.email,
+        Usuarios.cedula,
+        Usuarios.rol,
+        Usuarios.creacion,
+        Usuarios.estado
+    )
     return render_template('usuario.html', usuarios=usuarios)

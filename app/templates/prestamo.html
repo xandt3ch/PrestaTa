@@ -4,20 +4,10 @@
 
 {% block content %}
 <table>
-     id = db.Column(db.Integer, autoincrement=True, primary_key=True)
-    cliente_id = db.Column(db.Integer, db.ForeignKey('Clientes.id'), nullable=False)
-    usuario_id = db.Column(db.Integer, db.ForeignKey('Usuarios.id'), nullable=False)
-    monto = db.Column(db.Float)
-    interes = db.Column(db.Float)
-    total_pagar = db.Column(db.Float)
-    cuotas = db.Column(db.Integer)
-    frecuencia = db.Column(db.String(100))
-    fecha_inicio = db.Column(db.Date)
-    estado = db.Column(db.String(100), default='activo')
+     
     <tr>
         <th>id</th>
-        <th>Cliente id</th>
-        <th>Usuario id</th>
+        <th>Cliente </th>
         <th>Monto</th>
         <th>Interés</th>
         <th>Total a Pagar</th>
@@ -27,11 +17,11 @@
         <th>Estado</th>
 
     </tr>
+     {% for cliente in clientes %}
     {% for prestamo in prestamos %}
     <tr>
         <td>{{ prestamo.id }}</td>
-        <td>{{ prestamo.cliente_id }}</td>
-        <td>{{ prestamo.usuario_id }}</td>
+        <td>{{ cliente.nombre }}</td>
         <td>{{ prestamo.monto }}</td>
         <td>{{ prestamo.interes }}</td>
         <td>{{ prestamo.total_pagar }}</td>
@@ -40,6 +30,7 @@
         <td>{{ prestamo.fecha_inicio }}</td>
         <td>{{ prestamo.estado }}</td>
     </tr>
+    {% endfor %}
     {% endfor %}
 </table>
 
