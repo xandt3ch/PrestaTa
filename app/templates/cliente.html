@@ -3,29 +3,36 @@
 {% block title %} CLIENTE {% endblock %}
 
 {% block content %}
-<h1>CLIENTE</h1>
-<h4>pagina cliente</h4>
+<header>
+    <h1>CLIENTE</h1>
+    <button class="btn btn-primary" onclick="">Crear Cliente</button>
+</header>
+
 
 <table>
-    <tr>
-        <th>id</th>
-        <th>Nombre</th>
-        <th>Cédula</th>
-        <th>Telefono</th>
-        <th>Direccion</th>
-        <th>Creación</th>
-    </tr>
-    {% for cliente in clientes %}
-    <tr>
-        <td>{{ cliente.id }}</td>
-        <td>{{ cliente.nombre }}</td>
-        <td>{{ cliente.cedula }}</td>
-        <td>{{ cliente.telefono }}</td>
-        <td>{{ cliente.direccion }}</td>
-        <td>{{ cliente.creacion }}</td>
+    <thead class="table_thead">
+        <tr>
+            <th>id</th>
+            <th>Nombre</th>
+            <th>Cédula</th>
+            <th>Telefono</th>
+            <th>Direccion</th>
+            <th>Creación</th>
+        </tr>
+    </thead>
+    <tbody class="table_tbody">
+        {% for cliente in clientes %}
+        <tr>
+            <td>{{ cliente.id }}</td>
+            <td>{{ cliente.nombre }}</td>
+            <td>{{ cliente.cedula }}</td>
+            <td>{{ cliente.telefono }}</td>
+            <td>{{ cliente.direccion }}</td>
+            <td>{{ cliente.creacion }}</td>
 
-    </tr>
-    {% endfor %}
+        </tr>
+        {% endfor %}
+    </tbody>
 </table>
 
 {% endblock %}
