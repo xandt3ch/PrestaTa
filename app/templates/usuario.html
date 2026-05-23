@@ -1,0 +1,36 @@
+{% extends 'layout.html'%}
+
+{% block title %} USUARIO {% endblock %}
+
+{% block content %}
+<h1>usuario</h1>
+<h4>pagina usuario</h4>
+
+<table>
+
+    <tr>
+        <th>id</th>
+        <th>Apodo</th>
+        <th>Nombre</th>
+        <th>Email</th>
+        <th>Cédula</th>
+        <th>Rol</th>
+        <th>Creación</th>
+        <th>Estado</th>
+    </tr>
+    {% for usuario in usuarios %}
+    <tr>
+        <td>{{ usuario.id }}</td>
+        <td>{{ usuario.apodo }}</td>
+        <td>{{ usuario.nombre }}</td>
+        <td>{{ usuario.email }}</td>
+        <td>{{ usuario.cedula }}</td>
+        <td>{{ usuario.rol }}</td>
+        <td>{{ usuario.creacion }}</td>
+        <td>{{ usuario.estado }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+
+{% endblock %}

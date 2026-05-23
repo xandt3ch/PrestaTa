@@ -6,5 +6,26 @@
 <h1>CLIENTE</h1>
 <h4>pagina cliente</h4>
 
+<table>
+    <tr>
+        <th>id</th>
+        <th>Nombre</th>
+        <th>Cédula</th>
+        <th>Telefono</th>
+        <th>Direccion</th>
+        <th>Creación</th>
+    </tr>
+    {% for cliente in clientes %}
+    <tr>
+        <td>{{ cliente.id }}</td>
+        <td>{{ cliente.nombre }}</td>
+        <td>{{ cliente.cedula }}</td>
+        <td>{{ cliente.telefono }}</td>
+        <td>{{ cliente.direccion }}</td>
+        <td>{{ cliente.creacion }}</td>
+
+    </tr>
+    {% endfor %}
+</table>
 
 {% endblock %}

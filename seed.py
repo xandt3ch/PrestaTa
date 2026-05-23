@@ -8,7 +8,9 @@ with app.app_context():
 
     # 🔹 Crear prestamistas
     usuarios = [
-        Usuarios(apodo="acruz", 
+        Usuarios(
+                 id=1,
+                 apodo="acruz", 
                  nombre="Alexander Cruz", 
                  email="acruz@example.com",
                  cedula=12345678901,
@@ -17,12 +19,14 @@ with app.app_context():
                  creacion=date.today(),
                  estado=True),
 
-        Usuarios(apodo="jcruz", 
-                 nombre="Jairo Cruz", 
-                 email="jcruz@example.com",
-                 cedula=10987654321,
-                 password="password456",
-                 rol="colaborador",
+        Usuarios(
+                id=2,
+                apodo="jcruz", 
+                nombre="Jairo Cruz", 
+                email="jcruz@example.com",
+                cedula=10987654321,
+                password="password456",
+                rol="colaborador",
                  creacion=date.today(),
                  estado=True),
        
