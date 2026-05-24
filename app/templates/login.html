@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PrestaTA - Plataforma profesional de gestión de préstamos. Administra tus préstamos, clientes y pagos de forma segura y eficiente. Ideal para prestamistas independientes.">
+    <meta name="keywords" content="gestión préstamos, software préstamos, administrador préstamos, platform préstamos, cuotas, intereses">
+    <meta name="author" content="PrestaTA">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="PrestaTA - Administra tus Préstamos Profesionalmente">
+    <meta property="og:description" content="Plataforma moderna para gestionar préstamos, clientes y pagos. Controla tus finanzas con facilidad.">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#2563eb">
+    
+    <title>PrestaTA | Administrador de Préstamos Profesional</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/login.css')}}">
+</head>
+<body>
+    <div class="login-container">
+        <!-- Left Section - Promotional -->
+        <section class="login-promo">
+            <div class="promo-content">
+                <div class="promo-logo">
+                    <div class="logo-icon-large"></div>
+                    <h1>PrestaTA</h1>
+                    <p class="tagline">Tu plataforma de gestión de préstamos</p>
+                </div>
+
+                <div class="promo-features">
+                    <h2>¿Por qué PrestaTA?</h2>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">📊</div>
+                        <div class="feature-text">
+                            <h3>Control Total</h3>
+                            <p>Administra todos tus préstamos en un solo lugar. Visualiza, edita y monitorea en tiempo real.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="feature-icon">💰</div>
+                        <div class="feature-text">
+                            <h3>Gestión de Pagos</h3>
+                            <p>Registra y rastrea cada pago de tus clientes. Mantén un historial completo y organizado.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="feature-icon">📈</div>
+                        <div class="feature-text">
+                            <h3>Dashboard Intuitivo</h3>
+                            <p>Visualiza gráficos, reportes y estadísticas clave para tomar mejores decisiones.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="feature-icon">🔒</div>
+                        <div class="feature-text">
+                            <h3>Seguridad Garantizada</h3>
+                            <p>Tus datos están protegidos con las mejores prácticas de seguridad del sector.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="feature-icon">⚡</div>
+                        <div class="feature-text">
+                            <h3>Rápido y Eficiente</h3>
+                            <p>Interfaz moderna y optimizada para trabajar rápidamente sin complicaciones.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="feature-icon">📱</div>
+                        <div class="feature-text">
+                            <h3>Acceso Desde Cualquier Lugar</h3>
+                            <p>Funciona en desktop, tablet y móvil. Gestiona tus préstamos desde donde estés.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="promo-stats">
+                    <div class="stat">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Prestamistas Activos</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">$10M+</span>
+                        <span class="stat-label">En Préstamos Gestionados</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">4.8★</span>
+                        <span class="stat-label">Satisfacción de Usuarios</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Right Section - Login Form -->
+        <section class="login-form-section">
+            <div class="login-form-wrapper">
+                <div class="form-header">
+                    <h2>Bienvenido</h2>
+                    <p>Inicia sesión en tu cuenta PrestaTA</p>
+                </div>
+
+                <form method="POST" action="{{ url_for('main.login') }}" class="login-form">
+                    <div class="form-group">
+                        <label for="username">Nombre de Usuario</label>
+                        <input 
+                            type="text" 
+                            id="username" 
+                            name="username" 
+                            class="form-input" 
+                            placeholder="Tu nombre de usuario"
+                            required
+                            autocomplete="username"
+                        >
+                        <div class="input-icon">👤</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Contraseña</label>
+                        <input 
+                            type="password" 
+                            id="password" 
+                            name="password" 
+                            class="form-input" 
+                            placeholder="Tu contraseña"
+                            required
+                            autocomplete="current-password"
+                        >
+                        <div class="input-icon">🔒</div>
+                    </div>
+
+                    <div class="form-remember">
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="remember" id="remember">
+                            <span class="checkmark"></span>
+                            Recuerda mi sesión
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn-login">
+                        <span>Iniciar Sesión</span>
+                        <span class="btn-arrow">→</span>
+                    </button>
+                </form>
+
+                <div class="form-footer">
+                    <p class="forgot-password">
+                        <a href="#">¿Olvidaste tu contraseña?</a>
+                    </p>
+                </div>
+
+                <div class="divider">
+                    <span>O</span>
+                </div>
+
+                <div class="signup-section">
+                    <p>¿No tienes cuenta?</p>
+                    <a href="#" class="btn-signup">Registrarse ahora</a>
+                </div>
+
+                <div class="trust-section">
+                    <p class="trust-title">Confían en PrestaTA</p>
+                    <div class="trust-logos">
+                        <div class="trust-logo">🏦</div>
+                        <div class="trust-logo">💼</div>
+                        <div class="trust-logo">🤝</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="login-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>PrestaTA</h4>
+                <p>La plataforma más confiable para gestionar préstamos</p>
+            </div>
+            <div class="footer-section">
+                <h4>Enlaces</h4>
+                <ul>
+                    <li><a href="#">Términos de Servicio</a></li>
+                    <li><a href="#">Política de Privacidad</a></li>
+                    <li><a href="#">Contáctanos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Redes Sociales</h4>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 PrestaTA. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Validación de formulario
+        document.querySelector('.login-form').addEventListener('submit', function(e) {
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value;
+            
+            if (!username || !password) {
+                e.preventDefault();
+                alert('Por favor completa todos los campos');
+                return false;
+            }
+        });
+
+        // Prevenir espacios en blanco en username
+        document.getElementById('username').addEventListener('keypress', function(e) {
+            if (e.key === ' ') {
+                e.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>

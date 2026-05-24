@@ -2,35 +2,49 @@
 
 {% block title %} USUARIO {% endblock %}
 
-{% block content %}
-<h1>usuario</h1>
-<h4>pagina usuario</h4>
+    {% block content %}
+<header class="header">
+    <div class="header-content">
+        <div class="header-title">
+            <h1>Usuarios</h1>
+            <p class="header-subtitle">Gestiona y registra todos los usuarios</p>
+        </div>
+        <button class="header-btn" onclick="">
+            <span class="btn-icon">➕</span> Crear Usuario
+        </button>
+    </div>
+</header>
 
-<table>
-
-    <tr>
-        <th>id</th>
-        <th>Apodo</th>
-        <th>Nombre</th>
-        <th>Email</th>
-        <th>Cédula</th>
-        <th>Rol</th>
-        <th>Creación</th>
-        <th>Estado</th>
-    </tr>
-    {% for usuario in usuarios %}
-    <tr>
-        <td>{{ usuario.id }}</td>
-        <td>{{ usuario.apodo }}</td>
-        <td>{{ usuario.nombre }}</td>
-        <td>{{ usuario.email }}</td>
-        <td>{{ usuario.cedula }}</td>
-        <td>{{ usuario.rol }}</td>
-        <td>{{ usuario.creacion }}</td>
-        <td>{{ usuario.estado }}</td>
-    </tr>
-    {% endfor %}
-</table>
+<div class="table-container">
+    <table class="table">
+        <thead class="table-head">
+            <tr>
+                <th>id</th>
+                <th>Apodo</th>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Cédula</th>
+                <th>Rol</th>
+                <th>Creación</th>
+                <th>Estado</th>
+            </tr>
+        </thead>    
+        <tbody class="table-body">
+        {% for usuario in usuarios %}
+        <tr>
+            <td>{{ usuario.id }}</td>
+            <td>{{ usuario.apodo }}</td>
+            <td>{{ usuario.nombre }}</td>
+            <td>{{ usuario.email }}</td>
+            <td>{{ usuario.cedula }}</td>
+            <td>{{ usuario.rol }}</td>
+            <td>{{ usuario.creacion }}</td>
+            <td>{{ usuario.estado }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
 
 
 {% endblock %}

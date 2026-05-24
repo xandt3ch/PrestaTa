@@ -3,35 +3,51 @@
 {% block title %} PRESTAMO {% endblock %}
 
 {% block content %}
-<table>
-     
-    <tr>
-        <th>id</th>
-        <th>Cliente </th>
-        <th>Monto</th>
-        <th>Interés</th>
-        <th>Total a Pagar</th>
-        <th>Cuotas</th>
-        <th>Frecuencia</th>
-        <th>Fecha de Inicio</th>
-        <th>Estado</th>
+<header class="header">
+    <div class="header-content">
+        <div class="header-title">
+            <h1>Préstamos</h1>
+            <p class="header-subtitle">Gestiona y registra todos los préstamos</p>
+        </div>
+        <button class="header-btn" onclick="">
+            <span class="btn-icon">➕</span> Crear Préstamo
+        </button>
+    </div>
+</header>
 
-    </tr>
-     {% for cliente in clientes %}
-    {% for prestamo in prestamos %}
-    <tr>
-        <td>{{ prestamo.id }}</td>
-        <td>{{ cliente.nombre }}</td>
-        <td>{{ prestamo.monto }}</td>
-        <td>{{ prestamo.interes }}</td>
-        <td>{{ prestamo.total_pagar }}</td>
-        <td>{{ prestamo.cuotas }}</td>
-        <td>{{ prestamo.frecuencia }}</td>
-        <td>{{ prestamo.fecha_inicio }}</td>
-        <td>{{ prestamo.estado }}</td>
-    </tr>
-    {% endfor %}
-    {% endfor %}
-</table>
+<div class="table-container">
+    <table class="table">
+        <thead class="table-head">
+            <tr>
+                <th>id</th>
+                <th>Cliente </th>
+                <th>Monto</th>
+                <th>Interés</th>
+                <th>Total a Pagar</th>
+                <th>Cuotas</th>
+                <th>Frecuencia</th>
+                <th>Fecha de Inicio</th>
+                <th>Estado</th>
+            </tr>   
+        </thead>
+        <tbody class="table-body">
+        {% for cliente in clientes %}
+        {% for prestamo in prestamos %}
+        <tr>
+            <td>{{ prestamo.id }}</td>
+            <td>{{ cliente.nombre }}</td>
+            <td>{{ prestamo.monto }}</td>
+            <td>{{ prestamo.interes }}</td>
+            <td>{{ prestamo.total_pagar }}</td>
+            <td>{{ prestamo.cuotas }}</td>
+            <td>{{ prestamo.frecuencia }}</td>
+            <td>{{ prestamo.fecha_inicio }}</td>
+            <td>{{ prestamo.estado }}</td>
+        </tr>
+        {% endfor %}
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
 
 {% endblock %}

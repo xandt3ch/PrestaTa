@@ -3,36 +3,43 @@
 {% block title %} CLIENTE {% endblock %}
 
 {% block content %}
-<header>
-    <h1>CLIENTE</h1>
-    <button class="btn btn-primary" onclick="">Crear Cliente</button>
+<header class="header">
+    <div class="header-content">
+        <div class="header-title">
+            <h1>Clientes</h1>
+            <p class="header-subtitle">Gestiona y registra todos los clientes</p>
+        </div>
+        <button class="header-btn" onclick="">
+            <span class="btn-icon">➕</span> Crear Cliente
+        </button>
+    </div>
 </header>
 
-
-<table>
-    <thead class="table_thead">
-        <tr>
-            <th>id</th>
-            <th>Nombre</th>
-            <th>Cédula</th>
-            <th>Telefono</th>
-            <th>Direccion</th>
-            <th>Creación</th>
-        </tr>
-    </thead>
-    <tbody class="table_tbody">
-        {% for cliente in clientes %}
-        <tr>
-            <td>{{ cliente.id }}</td>
-            <td>{{ cliente.nombre }}</td>
-            <td>{{ cliente.cedula }}</td>
-            <td>{{ cliente.telefono }}</td>
-            <td>{{ cliente.direccion }}</td>
-            <td>{{ cliente.creacion }}</td>
-
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
+<div class="table-container">
+    <table class="table">
+        <thead class="table-head">
+            <tr>
+                <th>id</th>
+                <th>Nombre</th>
+                <th>Cédula</th>
+                <th>Telefono</th>
+                <th>Direccion</th>
+                <th>Creación</th>
+            </tr>
+        </thead>
+        <tbody class="table-body">
+            {% for cliente in clientes %}
+            <tr>
+                <td>{{ cliente.id }}</td>
+                <td>{{ cliente.nombre }}</td>
+                <td>{{ cliente.cedula }}</td>
+                <td>{{ cliente.telefono }}</td>
+                <td>{{ cliente.direccion }}</td>
+                <td>{{ cliente.creacion }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
 
 {% endblock %}
