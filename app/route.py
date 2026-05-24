@@ -1,6 +1,5 @@
 from flask import  Blueprint, render_template, url_for, redirect, request, flash, session
-from flask_login import login_required
-from app import db
+from flask_login import login_required, LoginManager, user_loader, current_user
 from app.models import Usuarios, Clientes, Prestamos, Cuotas, Pagos
 
 
