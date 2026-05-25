@@ -5,10 +5,12 @@ from app.models import Usuarios, Clientes, Prestamos, Cuotas, Pagos
 
 main = Blueprint('main',__name__)
 auth = Blueprint('auth',__name__)
+login_manager = LoginManager()
+login_manager.login_view = 'auth.login'
 
 @login_manager.user_loader
 def load_user(user_id):
-    return Usuarios.query.get(usuarios.id)
+    return Usuarios.query.get(Usuarios.id)
 
 @auth.route('/', methods=['GET', 'POST'])
 def login():
