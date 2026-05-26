@@ -1,12 +1,11 @@
 from flask import Flask
-from .route import LoginManager
 from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
-login_manager = LoginManager()
 
 def create_app():
     app = Flask(__name__)
+    app.config['SECRET_KEY'] = 'your_secret_key_here'
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///prestamos.db'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
@@ -18,8 +17,5 @@ def create_app():
     from app.route import main, auth
     app.register_blueprint(main)
     app.register_blueprint(auth)
-
-    login_manager.login_view = 'auth.login'
-    login_manager.init_app(app)
 
     return app

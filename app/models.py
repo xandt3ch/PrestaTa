@@ -8,6 +8,7 @@ class Usuarios(db.Model):
     nombre = db.Column(db.String(100))
     email = db.Column(db.String(100), unique=True)
     cedula = db.Column(db.Integer, unique=True)
+    telefono = db.Column(db.Integer, unique=True)
     password = db.Column(db.String(100))
     rol = db.Column(db.String(50))
     creacion = db.Column(db.DateTime)

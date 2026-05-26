@@ -48,8 +48,14 @@
     <main class="main">
         {% block content %}{% endblock %}
     </main>
+    <script>
+        const dialog = document.querySelector('dialog');
+        const createBtn = document.querySelector('.header-btn');
 
+        createBtn.addEventListener('click', () => {
+            dialog.showModal();
+        });
+    </script>
 </div>
-
 </body>
 </html>
