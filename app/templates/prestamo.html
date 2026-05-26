@@ -50,4 +50,35 @@
     </table>
 </div>
 
+<dialog>
+    <form method="post" action="/prestamo" class="dialog-form">
+        <h2>Crear Préstamo</h2>
+        <label for="apodo">Apodo:</label>
+        <input type="text" id="apodo" name="apodo" required>
+
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="cedula">Cédula:</label>
+        <input type="text" id="cedula" name="cedula" required>
+        
+        <label for="telefono">Teléfono:</label>
+        <input type="text" id="telefono" name="telefono" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="rol">Rol:</label>
+        <input type="text" id="rol" name="rol" required>
+
+        <div class="dialog-buttons">
+            <button type="submit" class="btnDialog">Guardar</button>
+            <button type="button" class="btnDialog" onclick="document.querySelector('dialog').close()">Cancelar</button>
+        </div>
+    </form>
+    </dialog>
+
 {% endblock %}

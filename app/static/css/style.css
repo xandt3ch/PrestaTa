@@ -811,6 +811,8 @@ dialog form input{
     .main{
         padding:12px;
         padding-bottom:90px;
+        width:100vw;
+        height:100vh;
     }
 
     .actions{

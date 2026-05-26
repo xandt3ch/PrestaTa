@@ -50,4 +50,26 @@
     </table>
 </div>
 
+    <dialog>
+        <form method="post" action="/cliente" class="dialog-form">
+            <h2>Crear Cliente</h2>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="cedula">Cédula:</label>
+            <input type="number" id="cedula" name="cedula" required>
+
+            <label for="telefono">Teléfono:</label>
+            <input type="text" id="telefono" name="telefono" required>
+
+            <label for="direccion">Dirección:</label>
+            <input type="text" id="direccion" name="direccion" required>
+
+            <div class="dialog-buttons">
+                <button type="submit" class="btnDialog">Guardar</button>
+                <button type="button" class="btnDialog" onclick="document.querySelector('dialog').close()">Cancelar</button>
+            </div>
+        </form>
+    </dialog>
+
 {% endblock %}

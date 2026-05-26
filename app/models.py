@@ -80,3 +80,12 @@ class Garantias(db.Model):
     __table_args__ = (
         db.ForeignKeyConstraint(['prestamo_id'], ['Prestamos.id']),
     )
+
+class Empresa(db.Model):
+    __tablename__ = 'Empresa'
+    id = db.Column(db.Integer, autoincrement=True, primary_key=True)
+    rnc = db.Column(db.Integer, unique=True)
+    nombre = db.Column(db.String(100))
+    direccion = db.Column(db.String(200))
+    telefono = db.Column(db.String(20))
+    email = db.Column(db.String(100))

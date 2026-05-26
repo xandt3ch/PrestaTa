@@ -56,7 +56,28 @@ def config():
     return render_template('config.html', title='Configuración')
 
 # ruta de configuracion
-@main.route('/usuario')
+@main.route('/usuario', methods=['GET', 'POST'])
 def usuario():
+    if request.method == 'POST':
+        apodo = request.form['apodo']
+        nombre = request.form['nombre']
+        email = request.form['email']
+        cedula = int(request.form['cedula'])
+        telefono = int(request.form['telefono'])
+        password = request.form['password']
+        rol = request.form['rol']
+       
+        nuevo_usuario = Usuarios(
+            apodo=apodo, nombre=nombre, 
+            email=email, cedula=cedula, 
+            telefono=telefono, password=password, 
+            rol=rol, creacion=None, estado=True)
+        
+        db.session.add(nuevo_usuario)
+        db.session.commit()
+
+        flash('Usuario agregado exitosamente', 'success')
+        return redirect(url_for('main.usuario'))
+
     usuarios = Usuarios.query.all()
     return render_template('usuario.html', usuarios=usuarios)
